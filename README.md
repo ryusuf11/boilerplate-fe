@@ -1,4 +1,4 @@
-# asd
+# Evermos Brand FE
 
 ## Project setup
 ```
