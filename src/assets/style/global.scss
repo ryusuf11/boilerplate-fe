@@ -1,0 +1,43 @@
+.gTheme {
+	&__button {
+		&--black {
+			border-radius: 5px;
+			box-shadow: 0 6px 18px 0 rgba(20, 20, 20, 0.15), 0 4px 6px 0 rgba(20, 20, 20, 0.15);
+			background-color: #141414;
+			color: #fff;
+			padding: 15px;
+	
+			&:hover, &:focus {
+				background-color: #333;
+				color: #fff;
+			}
+		}
+	}
+
+	&__checkbox {
+		&--yellow {
+			.el-checkbox__inner:hover {
+				border-color: #FBBB14 !important;
+			}
+
+			.is-checked {
+				+ .el-checkbox__label {
+					color: #595959;
+				}
+
+				.el-checkbox__inner {
+					background-color: #FBBB14;
+					border-color: #FBBB14 !important;
+				}
+			}
+		}
+	}
+}
+
+input {
+	.input--login & {
+		height: 50px;
+		padding-left: 50px !important;
+		padding-right: 50px !important;
+	}
+}

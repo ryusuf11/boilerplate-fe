@@ -1,32 +1,45 @@
 <template>
 	<div id="app">
-		<div id="nav">
-			<router-link to="/">Home</router-link> |
-			<router-link to="/about">About</router-link>
-		</div>
-		<router-view/>
+		<el-container style="height: 100%">
+			<Sidebar></Sidebar>
+
+			<el-container>
+				<Header></Header>
+
+				<el-main style="margin-top:60px;margin-left:220px;background-color:#eee;padding:25px 30px;">
+					<el-table :data="tableData">
+						<el-table-column prop="date" label="Date" width="140">
+						</el-table-column>
+						<el-table-column prop="name" label="Name" width="120">
+						</el-table-column>
+						<el-table-column prop="address" label="Address">
+						</el-table-column>
+					</el-table>
+				</el-main>
+			</el-container>
+		</el-container>
 	</div>
 </template>
 
-<style lang="scss">
-#app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
-}
+<script>
+import Sidebar from '@/components/Sidebar.vue'
+import Header from '@/components/Header.vue'
 
-#nav {
-	padding: 30px;
+export default {
+	components: {
+		Sidebar,
+		Header,
+	},
+	data() {
+		const item = {
+			date: '2016-05-02',
+			name: 'Tom',
+			address: 'No. 189, Grove St, Los Angeles'
+		}
 
-	a {
-		font-weight: bold;
-		color: #2c3e50;
-
-		&.router-link-exact-active {
-			color: #42b983;
+		return {
+			tableData: Array(20).fill(item)
 		}
 	}
 }
-</style>
+</script>
