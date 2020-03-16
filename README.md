@@ -1,4 +1,4 @@
-# Evermos Brand FE
+# Boilerplate FE
 
 ## Project setup
 ```
